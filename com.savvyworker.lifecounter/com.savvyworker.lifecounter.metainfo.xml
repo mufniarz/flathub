@@ -6,7 +6,6 @@
   <summary>Life counter and companion app for Magic: The Gathering</summary>
 
   <metadata_license>MIT</metadata_license>
-  <!-- App is proprietary (closed-source, commercial subscriptions) -->
   <project_license>LicenseRef-proprietary</project_license>
 
   <developer id="com.savvyworker">
@@ -39,8 +38,7 @@
 
   <launchable type="desktop-id">com.savvyworker.lifecounter.desktop</launchable>
   
-  <!-- OARS content rating — update if your app contains any mature content -->
-  <content_rating type="oars-1.0">
+  <content_rating type="oars-1.1">
     <content_attribute id="money-purchasing">intense</content_attribute>
   </content_rating>
 
