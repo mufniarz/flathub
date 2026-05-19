@@ -2,10 +2,10 @@ app-id: com.savvyworker.lifecounter
 runtime: org.freedesktop.Platform
 runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
+separate-locales: false
+command: savvy-mtg-life-counter
 base: org.electronjs.Electron2.BaseApp
 base-version: "25.08"
-command: savvy-mtg-life-counter
-separate-locales: false
 
 finish-args:
   - --share=ipc
@@ -32,13 +32,17 @@ modules:
         /app/share/applications/com.savvyworker.lifecounter.desktop
       - install -Dm644 com.savvyworker.lifecounter.metainfo.xml
         /app/share/metainfo/com.savvyworker.lifecounter.metainfo.xml
+      - install -Dm644 squashfs-root/LICENSE.electron.txt
+        /app/share/licenses/com.savvyworker.lifecounter/LICENSE.electron.txt
+      - install -Dm644 squashfs-root/LICENSES.chromium.html
+        /app/share/licenses/com.savvyworker.lifecounter/LICENSES.chromium.html
 
     sources:
       - type: extra-data
-        filename: savvy-mtg-life-counter.AppImage
         url: https://github.com/mufniarz/savvy-mtg-life-counter-releases/releases/download/v4.6.0/Savvy-MTG-Life-Counter-v4.6.0-x86_64.AppImage
         sha256: a8b89b8f7d68ea3a6c7c4557f352f7fe3898c1ab6dd7c09fe5215a5273d88695
         size: 172891842
+        filename: savvy-mtg-life-counter.AppImage
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mufniarz/savvy-mtg-life-counter-releases/releases/latest
@@ -46,10 +50,10 @@ modules:
           url-query: .assets[] | select(.name | endswith("x86_64.AppImage")) | .browser_download_url
 
       - type: script
-        dest-filename: savvy-mtg-life-counter.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
           - exec zypak-wrapper "/app/lib/savvy-mtg-life-counter/savvy-mtg-life-counter" "$@"
+        dest-filename: savvy-mtg-life-counter.sh
 
       - type: file
         path: com.savvyworker.lifecounter.desktop

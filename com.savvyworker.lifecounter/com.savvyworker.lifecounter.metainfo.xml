@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 Marcin Ufniarz -->
 <component type="desktop-application">
   <id>com.savvyworker.lifecounter</id>
 
   <name>Savvy MTG Life Counter</name>
   <summary>Life counter and companion app for Magic: The Gathering</summary>
 
-  <metadata_license>MIT</metadata_license>
+  <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
 
   <developer id="com.savvyworker">
@@ -56,11 +57,17 @@
 
   <screenshots>
     <screenshot type="default">
-      <caption>Life counter view with multiple players</caption>
       <image
-      >https://raw.githubusercontent.com/mufniarz/savvy-mtg-life-counter-releases/main/linux-savvy-mtg-life-counter-screenshot.png</image>
+      >https://raw.githubusercontent.com/mufniarz/savvy-mtg-life-counter-releases/594b55f43bc769056668b8757d4b88c0b046c53d/linux-savvy-mtg-life-counter-screenshot.png</image>
+      <caption>Life counter view with multiple players</caption>
     </screenshot>
   </screenshots>
+
+  <requires>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <display_length compare="ge">768</display_length>
+  </requires>
 
   <releases>
     <release version="4.6.0" date="2026-05-11">
